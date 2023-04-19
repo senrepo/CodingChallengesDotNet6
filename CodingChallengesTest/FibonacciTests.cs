@@ -1,7 +1,7 @@
 namespace CodingChallengesTest
 {
     [TestFixture]
-    public class Tests
+    public class FibonacciTests
     {
         [SetUp]
         public void Setup()
