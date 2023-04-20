@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CodingChallengesTest\**" />
+    <Compile Remove="CodingChallenges\**" />
+    <Content Remove="CodingChallengesTest\**" />
+    <Content Remove="CodingChallenges\**" />
+    <EmbeddedResource Remove="CodingChallengesTest\**" />
+    <EmbeddedResource Remove="CodingChallenges\**" />
+    <None Remove="CodingChallengesTest\**" />
+    <None Remove="CodingChallenges\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
