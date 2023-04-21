@@ -9,7 +9,6 @@ namespace CodingChallenges
 {
     public class JsonData
     {
-
         public class WeatherForecast
         {
             public DateTimeOffset Date { get; set; }
@@ -36,8 +35,7 @@ namespace CodingChallenges
             try
             {
                 var httpClient = new HttpClient();
-                var response = await httpClient.GetAsync(url);
-
+                var response = await httpClient.GetAsync(url); 
                 response.EnsureSuccessStatusCode();
                 json = await response.Content.ReadAsStringAsync();
             }

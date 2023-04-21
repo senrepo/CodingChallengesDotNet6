@@ -24,10 +24,15 @@ namespace CodingChallengesTest
 
         [Test]
         public void TestJsonWebServiceCall()
+     // public async Task TestJsonWebServiceCall()
         {
             string url = "https://dummyjson.com/products";
-            var json = new JsonData().GetWeatherJsonFromService(url);
-
+            var jsonData = new JsonData();
+            var json = jsonData.GetWeatherJsonFromService(url).Result;
+            //await didn't work some scenarios because await asynchronouslly unwrapping the resutl, but Result blocks thread to get the result
+            //in test method context, the calling thread completed before worker thread returns the result.
+            //var json = await jsonData.GetWeatherJsonFromService(url); 
+            Assert.IsNotEmpty(json);
         }
 
         [Test]
