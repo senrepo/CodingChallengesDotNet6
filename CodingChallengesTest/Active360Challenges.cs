@@ -42,6 +42,56 @@ namespace CodingChallengesTest
             }
         }
 
+        [Test]
+        public void DelegateChallenge()
+        {
+            // Use arrow inline function 1. takes in 2 number and return the sum, 2.
+            // takes the sum and print it to the console= 
+
+            Func<int, int, int> Add = delegate (int a, int b)
+            {
+                return a + b;
+            };
+
+            Action<int> Display = delegate (int a)
+            {
+                Console.WriteLine(a);
+            };
+
+            Display(Add(1, 2));
+            PassingFunctionAsParameter(Add, Display);
+        }
+
+        private void PassingFunctionAsParameter(Func<int, int, int> Add, Action<int> Display)
+        {
+            int sum = Add(5, 10);
+            Display(sum);
+        }
+
+        [Test]
+        public void RecursiveFactorialChallenge()
+        {
+            // Recursive function to find a factorial of a number  
+            //f(n) = f(n) * f(n-1) * f(n-2) ... * 1
+            //Examples
+            //    f(0) = 0
+            //    f(1) = 1
+            //    f(2) = 2 = 2 * 1
+            //    f(3) = 6 = 3 * 2 * 1
+            //    f(4) = 24 = 4 * 3 * 2 * 1
+
+            var sum = RecursiveFactorial(4);
+            Assert.AreEqual(24, sum);
+
+        }
+
+        private int RecursiveFactorial(int n)
+        {
+            if (n == 1) return 1;
+            else return n * RecursiveFactorial(n - 1);
+        }
+
+
         public class Employee
         {
             public int ID { get; set; }

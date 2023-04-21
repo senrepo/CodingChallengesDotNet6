@@ -54,5 +54,11 @@ namespace CodingChallenges
 
         //    return sum;
         //}
+
+        public int RecursiveFactorial(int n)
+        {
+            if (n == 1) return 1;
+            else return n * RecursiveFactorial(n - 1);
+        }
     }
 }
