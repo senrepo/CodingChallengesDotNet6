@@ -61,6 +61,45 @@ namespace CodingChallengesTest
             Console.WriteLine("Working...");
         }
 
+        public async Task TaskRun()
+        {
+            //create 20 random rumbers from 1-20 and calculate the factorial
+            //CPU bound operation
 
+            Func<int, int> factorial = delegate (int n)
+            {
+                if (n ==1) return 1;
+                else return n * factorial(n-1);
+            };
+
+            var factorialDict = new Dictionary<int, int>();
+            var random = new Random();
+            for(int i = 1; i <= 20; i++)
+            {
+                var key = random.Next(1, 20);
+                factorialDict.Add(key, 0);
+            }
+
+            var jobs = new List<Job>();
+            foreach(var key in factorialDict.Keys)
+            {
+                var job = new Job()
+                {
+                    Key = key,
+                    Task = new Task(async () =>
+                    {
+
+                    })
+                };
+            }
+
+
+        }
+
+        public class Job
+        {
+            public int Key = 0;
+            public Task Task { get; set; }
+        }
     }
 }
