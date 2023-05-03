@@ -1,8 +1,8 @@
 USE Ecommerce;
 
-DROP PROCEDURE IF EXISTS CustomerOrderStatus;
+DROP PROCEDURE IF EXISTS SpCustomerOrderStatus;
 
-CREATE PROCEDURE CustomerOrderStatus (
+CREATE PROCEDURE SpCustomerOrderStatus (
 	@CustomerId As int
 ) AS
 BEGIN
@@ -24,4 +24,4 @@ BEGIN
 END;
 
 
-Execute CustomerOrderStatus @CustomerId=1001
+Execute SpCustomerOrderStatus @CustomerId=1001

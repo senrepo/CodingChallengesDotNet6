@@ -42,9 +42,10 @@ select * from (
 	group by c.CustomerId, c.CustomerName, o.OrderId, o.OrderStatus, s.Status) A
 	inner join
 	(	
-	select O.OrderId, sum(b.BilledAmt) BilledAmt from Orders o
+	select c.CustomerId, o.OrderId, sum(b.BilledAmt) BilledAmt from Customers c
+	inner join Orders o on c.CustomerId = o.CustomerId
 	inner join Billing b on b.OrderId = o.OrderId
-	group by O.OrderId) B 
+	group by c.CustomerId, O.OrderId) B 
 	on A.OrderId = B.OrderId
 
 

@@ -71,6 +71,7 @@ CREATE TABLE Products (
 --Customers -> CustomerId, Address, City, State, Country, Zip
 CREATE TABLE Customers (
 	CustomerId int primary key,
+	CustomerName varchar(200) not null,
 	Address varchar(100),
 	City varchar(50),
 	State varchar(50),
