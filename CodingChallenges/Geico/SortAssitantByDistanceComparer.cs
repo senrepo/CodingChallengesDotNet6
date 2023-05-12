@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CodingChallenges.Geico
+{
+    public class SortAssitantByDistanceComparer : IComparer<Assistant>
+    {
+        private readonly Geolocation location;
+        public SortAssitantByDistanceComparer(Geolocation location)
+        {
+            this.location = location;
+        }
+
+        public int Compare(Assistant x, Assistant y)
+        {
+            var assitantXDistance = GetDistance(x);
+            var assitantYDistance = GetDistance(y);
+            if (assitantXDistance < assitantYDistance)
+            {
+                return -1;
+            } else if (assitantXDistance > assitantYDistance)
+            {
+                return 1;
+            } else
+            {
+                return 0;
+            }
+        }
+
+        private double GetDistance(Assistant assistant)
+        {
+            //distance formula
+            //  distance = Sqrt( power(X2-X1)2 + power(Y2-Y1)2)
+            var distance = Math.Sqrt(Math.Pow(assistant.CurrentLocation.Xcoordinate - location.Xcoordinate, 2) +
+                                     Math.Pow(assistant.CurrentLocation.Ycoordinate - location.Ycoordinate, 2));
+
+            return distance;
+        }
+    }
+}
