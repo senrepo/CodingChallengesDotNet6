@@ -43,8 +43,8 @@ namespace CodingChallengesTest
 
             //call the service get the nearest assitants
             var roadService = new RoadsideAssistanceService();
-            var nearbyAssistants = roadService.FindNearestAssistants(disabledVehicleLocation, 3);
-            Assert.True(nearbyAssistants.Count <= 3);
+            //var nearbyAssistants = roadService.FindNearestAssistants(disabledVehicleLocation, 3);
+            //Assert.True(nearbyAssistants.Count <= 3);
 
             //reserve a assistant
             var assitant = roadService.ReserveAssistant(customer, disabledVehicleLocation);

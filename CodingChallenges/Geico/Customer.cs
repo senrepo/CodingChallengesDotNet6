@@ -10,6 +10,7 @@ namespace CodingChallenges.Geico
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string PhoneNumber { get; set; }
         public ServiceRequest RoadsideAssistaneRequest { get; set; }
     }
 }

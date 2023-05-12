@@ -13,5 +13,10 @@ namespace CodingChallenges.Geico
         public bool IsAvailable { get; set; }
         public Geolocation CurrentLocation { get; set; }
 
+        public void Notify(ServiceRequest request)
+        {
+
+        }
+
     }
 }

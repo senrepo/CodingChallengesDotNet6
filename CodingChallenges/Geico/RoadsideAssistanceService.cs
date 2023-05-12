@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -11,18 +12,18 @@ namespace CodingChallenges.Geico
     public interface IRoadsideAssistanceService
     {
         void UpdateAssistantLocation(Assistant assistant, Geolocation assistantLocation);
-        List<Assistant> FindNearestAssistants(Geolocation geolocation, int limit);
+        ImmutableSortedSet<Assistant> FindNearestAssistants(Geolocation geolocation, int limit);
         Assistant ReserveAssistant(Customer customer, Geolocation customerLocation);
         void ReleaseAssistant(Customer customer, Assistant assistant);
     }
 
     public class RoadsideAssistanceService : IRoadsideAssistanceService
     {
-        private readonly List<Assistant> assistants;
+        private readonly ConcurrentBag<Assistant> assistants;
 
         public RoadsideAssistanceService()
         {
-            assistants = new List<Assistant>()
+            assistants = new ConcurrentBag<Assistant>()
             {
                 new Assistant()
                 {
@@ -56,15 +57,12 @@ namespace CodingChallenges.Geico
             };
         }
 
-        public List<Assistant> FindNearestAssistants(Geolocation geolocation, int limit)
+        public ImmutableSortedSet<Assistant> FindNearestAssistants(Geolocation geolocation, int limit)
         {
             var nearbyAssitants = new SortedSet<Assistant>(new SortAssitantByDistanceComparer(geolocation));
             var availableAssitants = assistants.Where(x => x.IsAvailable == true);
             nearbyAssitants.UnionWith(availableAssitants);
-            /* Note: Any changes in the SortedSet will recalculate the positions which intern calls the calcualte distance logic
-             * So performance reasons in mind, converted to List
-             */
-            return nearbyAssitants.Take(limit).ToList();
+            return nearbyAssitants.Take(limit).ToImmutableSortedSet();
         }
 
         public void ReleaseAssistant(Customer customer, Assistant assistant)
@@ -72,10 +70,14 @@ namespace CodingChallenges.Geico
             throw new NotImplementedException();
         }
 
-        public Assistant ReserveAssistant(Customer customer, Geolocation customerLocation)
+        public Assistant? ReserveAssistant(Customer customer, Geolocation customerLocation)
         {
-            throw new NotImplementedException();
-
+            var list = FindNearestAssistants(customerLocation, 5);
+            var requestPublisher = new RequestPublisher(list);
+            requestPublisher.NotifyAssistants(customer.RoadsideAssistaneRequest);
+            Assistant assistant = requestPublisher.GetConfirmedAssistant();
+            assistants.Where(x => x.Id == assistant.Id).First().IsAvailable = false;
+            return assistant;
         }
 
         public void UpdateAssistantLocation(Assistant assistant, Geolocation assistantLocation)
