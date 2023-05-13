@@ -34,8 +34,8 @@ namespace CodingChallenges.Geico
         {
             //distance formula
             //  distance = Sqrt( power(X2-X1)2 + power(Y2-Y1)2)
-            var distance = Math.Sqrt(Math.Pow(assistant.CurrentLocation.Xcoordinate - location.Xcoordinate, 2) +
-                                     Math.Pow(assistant.CurrentLocation.Ycoordinate - location.Ycoordinate, 2));
+            var distance = Math.Sqrt(Math.Pow(assistant.GetLocation().X - location.X, 2) +
+                                     Math.Pow(assistant.GetLocation().Y - location.Y, 2));
 
             return distance;
         }

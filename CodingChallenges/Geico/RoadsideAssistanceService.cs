@@ -12,7 +12,7 @@ namespace CodingChallenges.Geico
     public interface IRoadsideAssistanceService
     {
         void UpdateAssistantLocation(Assistant assistant, Geolocation assistantLocation);
-        ImmutableSortedSet<Assistant> FindNearestAssistants(Geolocation geolocation, int limit);
+        List<Assistant> FindNearestAssistants(Geolocation geolocation, int limit);
         Assistant ReserveAssistant(Customer customer, Geolocation customerLocation);
         void ReleaseAssistant(Customer customer, Assistant assistant);
     }
@@ -29,60 +29,69 @@ namespace CodingChallenges.Geico
                 {
                     Id = 1,
                     Name = "Rajesh",
-                    CurrentLocation = new Geolocation(5,8),
-                    IsAvailable = true
-                    
                 },
                 new Assistant()
                 {
                     Id = 2,
                     Name = "Muthu",
-                    CurrentLocation = new Geolocation(4,12),
-                    IsAvailable = true
                 },
                 new Assistant()
                 {
-                    Id = 2,
+                    Id = 3,
                     Name = "Pawn",
-                    CurrentLocation = new Geolocation(3,6),
-                    IsAvailable = true
-                },
-                new Assistant()
-                {
-                    Id = 2,
-                    Name = "Kumar",
-                    CurrentLocation = new Geolocation(4,8),
-                    IsAvailable = true
                 }
+                //new Assistant()
+                //{
+                //    Id = 4,
+                //    Name = "Kumar",
+                //},
+                //new Assistant()
+                //{
+                //    Id = 5,
+                //    Name = "Prakash",
+                //}
             };
+
+            foreach(var assitant in assistants)
+            {
+                assitant.MakeAvailable();
+            }
         }
 
-        public ImmutableSortedSet<Assistant> FindNearestAssistants(Geolocation geolocation, int limit)
+        public List<Assistant> FindNearestAssistants(Geolocation geolocation, int limit)
         {
             var nearbyAssitants = new SortedSet<Assistant>(new SortAssitantByDistanceComparer(geolocation));
-            var availableAssitants = assistants.Where(x => x.IsAvailable == true);
+            var availableAssitants = assistants.Where(x => x.IsAvailable() == true);
             nearbyAssitants.UnionWith(availableAssitants);
-            return nearbyAssitants.Take(limit).ToImmutableSortedSet();
+            return nearbyAssitants.Take(limit).ToList();
         }
 
         public void ReleaseAssistant(Customer customer, Assistant assistant)
         {
-            throw new NotImplementedException();
+            assistant.MakeAvailable();
         }
 
         public Assistant? ReserveAssistant(Customer customer, Geolocation customerLocation)
         {
-            var list = FindNearestAssistants(customerLocation, 5);
-            var requestPublisher = new RequestPublisher(list);
-            requestPublisher.NotifyAssistants(customer.RoadsideAssistaneRequest);
-            Assistant assistant = requestPublisher.GetConfirmedAssistant();
-            assistants.Where(x => x.Id == assistant.Id).First().IsAvailable = false;
+            Console.WriteLine($"{DateTime.Now} {customer.Name} requested for an assitant at location ({customerLocation.X},{customerLocation.Y})");
+            var list = FindNearestAssistants(customerLocation, 3);
+            Assistant assistant = null;
+            if (list.Count > 0)
+            {
+                Console.WriteLine($"{DateTime.Now} Assistants {string.Join(",", list.Select(x=>x.Name).ToList())} are allocated to Service request: {customer.serviceRequest.Id}");
+                var requestPublisher = new RequestPublisher(list, customer.serviceRequest);
+                assistant = requestPublisher.GetConfirmedAssistant().Result;
+                assistant?.Process(customer.serviceRequest);
+            } else
+            {
+                Console.WriteLine($"{DateTime.Now} None of Assistants are available now");
+            }
             return assistant;
         }
 
         public void UpdateAssistantLocation(Assistant assistant, Geolocation assistantLocation)
         {
-            throw new NotImplementedException();
+            assistant.UpdateLocation(assistantLocation);
         }
     }
 }

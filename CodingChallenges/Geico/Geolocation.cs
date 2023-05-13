@@ -8,13 +8,13 @@ namespace CodingChallenges.Geico
 {
     public class Geolocation
     {
-        public int Xcoordinate { get; set; }   
-        public int Ycoordinate { get; set; }
+        public int X { get; set; }   
+        public int Y { get; set; }
 
         public Geolocation(int x, int y)
         {
-            this.Xcoordinate = x;
-            this.Ycoordinate = y;
+            this.X = x;
+            this.Y = y;
         }
     }
 }
