@@ -146,7 +146,7 @@ CREATE TABLE OrderDetails(
 CREATE TABLE Billing(
 	BillingId int Primary key,
 	OrderId int,
-	BilledAmt decimal(6,2),
+	BillAmt decimal(6,2),
 	BilledDate DATETIME DEFAULT GETDATE(),
 	BillMethod varchar(100),
 	Constraint fkBillingOrderId foreign key (OrderId) references Orders(OrderId)

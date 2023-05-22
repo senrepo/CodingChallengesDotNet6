@@ -1,12 +1,12 @@
 USE Ecommerce;
 
-DROP PROCEDURE IF EXISTS SpCustomerOrderStatus;
+DROP PROCEDURE IF EXISTS uspCustomerOrderStatus;
 
-CREATE PROCEDURE SpCustomerOrderStatus (
+CREATE PROCEDURE uspCustomerOrderStatus (
 	@CustomerId As int
 ) AS
 BEGIN
-	select A.CustomerId, A.CustomerName,A.OrderId, A.OrderStatus, A.OrderDate, A.ShippingStatus, A.TotalPrice, B.BilledAmt from (
+	select A.CustomerId, A.CustomerName,A.OrderId, A.OrderStatus, A.OrderDate, A.ShippingStatus, A.TotalPrice, B.BillAmt from (
 			select c.CustomerId, c.CustomerName, o.OrderId, o.OrderDate, o.OrderStatus, s.Status as ShippingStatus, sum(UnitPrice * Quantity) TotalPrice from Customers c 
 			inner join Orders o on c.CustomerId = o.CustomerId
 			inner join OrderDetails od on od.OrderId = o.OrderId
@@ -15,7 +15,7 @@ BEGIN
 			group by c.CustomerId, c.CustomerName, o.OrderId, o.OrderDate, o.OrderStatus, s.Status) A
 		inner join
 		(	
-			select c.CustomerId, o.OrderId, sum(b.BilledAmt) BilledAmt from Customers c
+			select c.CustomerId, o.OrderId, sum(b.BillAmt) BillAmt from Customers c
 			inner join Orders o on c.CustomerId = o.CustomerId
 			inner join Billing b on b.OrderId = o.OrderId
 			where c.CustomerId = @CustomerId
@@ -24,4 +24,4 @@ BEGIN
 END;
 
 
-Execute SpCustomerOrderStatus @CustomerId=1001
+Execute uspCustomerOrderStatus @CustomerId=1001

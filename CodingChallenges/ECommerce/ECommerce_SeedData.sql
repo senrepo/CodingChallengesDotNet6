@@ -31,9 +31,9 @@ INSERT INTO OrderDetails(OrderId, ProductId, UnitPrice, Quantity, DiscountCode) 
 INSERT INTO OrderDetails(OrderId, ProductId, UnitPrice, Quantity, DiscountCode) VALUES (4001, 2, 10.50, 1, '');
 
 --5001 to 6000
-INSERT INTO Billing(BillingId, OrderId, BilledAmt, BillMethod) VALUES (5001, 4001, 31, 'CREDIT CARD')
-update Billing set BilledAmt = 40 where BillingId = 5001
-insert into Billing (BillingId, OrderId, BilledAmt, BillMethod) VALUES (5002,4001,11.50, 'CHECK')
+INSERT INTO Billing(BillingId, OrderId, BillAmt, BillMethod) VALUES (5001, 4001, 31, 'CREDIT CARD')
+update Billing set BillAmt = 40 where BillingId = 5001
+insert into Billing (BillingId, OrderId, BillAmt, BillMethod) VALUES (5002,4001,11.50, 'CHECK')
 
 --6001 to 7000
 INSERT INTO Shipping(ShippingId, OrderId, CareerCode, Tracking, STATUS) VALUES (6001, 4001, 'USPS', '345343', 'ENROUTE')
