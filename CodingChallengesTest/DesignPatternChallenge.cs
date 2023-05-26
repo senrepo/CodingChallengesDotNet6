@@ -18,8 +18,8 @@ namespace CodingChallengesTest
             var vegMeal = cashier.Order("VeggieBurgerMeal");
             var nonVegMeal = cashier.Order("ChickenBurgerMeal");
 
-            var vegmealPlate = $"MainItem:{vegMeal.MainItem}, SideItem:{vegMeal.SideItem}, Drink: {vegMeal.Drink}";
-            var nonVegmealPlate = $"MainItem:{nonVegMeal.MainItem}, SideItem:{nonVegMeal.SideItem}, Drink: {nonVegMeal.Drink}";
+            var vegMealPlate = $"MainItem:{vegMeal.MainItem}, SideItem:{vegMeal.SideItem}, Drink: {vegMeal.Drink}";
+            var nonVegMealPlate = $"MainItem:{nonVegMeal.MainItem}, SideItem:{nonVegMeal.SideItem}, Drink: {nonVegMeal.Drink}";
         }
 
         public void TestStrategyPattern()
