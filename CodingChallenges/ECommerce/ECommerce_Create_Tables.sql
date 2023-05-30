@@ -62,7 +62,7 @@ USE Ecommerce;
 /* Product Table */
 
 CREATE TABLE Products (
-	ProductId int Primary Key,
+	ProductId int IDENTITY(5,1) Primary Key,
 	ProductName varchar(200) not null,
 	Price decimal(6,2) -- 1000.00 
 );
@@ -70,7 +70,7 @@ CREATE TABLE Products (
 /*Customer Table */
 --Customers -> CustomerId, Address, City, State, Country, Zip
 CREATE TABLE Customers (
-	CustomerId int primary key,
+	CustomerId int IDENTITY(1005,1) primary key,
 	CustomerName varchar(200) not null,
 	Address varchar(100),
 	City varchar(50),
@@ -99,7 +99,7 @@ Cart -> CartId, CustomerId, ProductId, Qty
 */
 
 CREATE TABLE Cart(
-	CartId int not null,
+	CartId int IDENTITY(2005,1) not null,
 	CustomerId int not null,
 	ProductId int not null,
 	Qty int not null,
@@ -114,7 +114,7 @@ Orders -> OrderId, CustomerId, OrderDate, OrderStatus
 		Orders.CustomerId has a foreign key relationship with Customers.CustomerId
 */
 CREATE TABLE Orders(
-	OrderId int Primary key,
+	OrderId int IDENTITY(4005,1) Primary key,
 	CustomerId int not null,
 	OrderDate DATETIME not null DEFAULT GETDATE(),
 	OrderStatus varchar(100),
@@ -144,7 +144,7 @@ CREATE TABLE OrderDetails(
 		Billing.OrderId has a foreign key relationship with Orders.OrderId
 */
 CREATE TABLE Billing(
-	BillingId int Primary key,
+	BillingId int IDENTITY(5005,1) Primary key,
 	OrderId int,
 	BillAmt decimal(6,2),
 	BilledDate DATETIME DEFAULT GETDATE(),
@@ -157,7 +157,7 @@ CREATE TABLE Billing(
 		Shipping.OrderId has a foreign key relationship with Orders.OrderId
 */
 CREATE TABLE Shipping(
-	ShippingId int Primary key,
+	ShippingId int IDENTITY(6005,1) Primary key,
 	OrderId int,
 	CareerCode varchar(100),
 	Tracking varchar(100),
