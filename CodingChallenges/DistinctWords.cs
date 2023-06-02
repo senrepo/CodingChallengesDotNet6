@@ -32,7 +32,8 @@ namespace CodingChallenges
                 if (distinctWords.Count ==0)
                 {
                     list = GetDistinctWords(_line, splitBy);
-                } else
+                } 
+                else
                 {
                     foreach(var word in distinctWords)
                     {
