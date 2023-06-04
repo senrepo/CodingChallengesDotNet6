@@ -15,11 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentService.WebAPI", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentService.Tests", "Travelers\DocumentService.Tests\DocumentService.Tests.csproj", "{387CD312-A0FD-460E-9823-B71867DE3D69}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Links", "Links", "{7EC7DCC6-8482-417F-BD39-BF21F02F88EE}"
-	ProjectSection(SolutionItems) = preProject
-		mylinks.html = mylinks.html
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
