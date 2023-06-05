@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallengesWebDotNet6", "CodingChallengesWebDotNet6.csproj", "{4DB575D7-36D9-425C-BE74-DA8222C9B5B0}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallenges", "CodingChallenges\CodingChallenges.csproj", "{759FE3D6-F9A9-4296-A378-432E4F9983C0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodingChallengesTest", "CodingChallengesTest\CodingChallengesTest.csproj", "{C7093F2F-C3C5-4C6A-AE2D-AECC93080456}"
