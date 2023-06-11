@@ -15,7 +15,7 @@ namespace IoT.Data.UnitTest.DeviceFoo2
         {
         }
         [Test]
-        public void Test_DeviceDataFoo1Adapter_Interface()
+        public void Test_DeviceDataFoo1Adapter_Implements_Interface()
         {
             var data = new DeviceDataFoo2Adapter(String.Empty);
             Assert.IsInstanceOf<IDeviceDataAdapter>(data);

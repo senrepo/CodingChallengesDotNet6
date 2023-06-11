@@ -8,7 +8,7 @@ namespace IoT.Data.UnitTest
         }
 
         [Test]
-        public void Test_DeviceData_Interface()
+        public void Test_DeviceData_Implements_Interface()
         {
             var data = new DeviceData();
             Assert.IsInstanceOf<IDeviceData>(data);
