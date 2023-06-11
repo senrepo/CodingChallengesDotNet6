@@ -13,16 +13,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentService.WebAPI", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocumentService.Tests", "Travelers\DocumentService.Tests\DocumentService.Tests.csproj", "{387CD312-A0FD-460E-9823-B71867DE3D69}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Copeland", "Copeland", "{51016463-117A-40F4-9E11-A2B5ADC7484F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise Files", "Exercise Files", "{B4D0E570-F142-4F3B-9300-E47A91E5DEF2}"
+	ProjectSection(SolutionItems) = preProject
+		Copeland\Excercise Files\Cargo- DeviceDataTakeHomeAssignment.pdf = Copeland\Excercise Files\Cargo- DeviceDataTakeHomeAssignment.pdf
+		Copeland\Excercise Files\DeviceDataFoo1.json = Copeland\Excercise Files\DeviceDataFoo1.json
+		Copeland\Excercise Files\DeviceDataFoo2.json = Copeland\Excercise Files\DeviceDataFoo2.json
+		Copeland\Excercise Files\How to Use Teams.docx = Copeland\Excercise Files\How to Use Teams.docx
+		Copeland\Excercise Files\Sentil Elayappan Interview Schedule .pdf = Copeland\Excercise Files\Sentil Elayappan Interview Schedule .pdf
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Data", "Copeland\Copeland.IoTData\IoT.Data.csproj", "{48A7DC2F-C072-4354-BD91-7B0065C004AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Data.UnitTest", "IoT.Data.UnitTest\IoT.Data.UnitTest.csproj", "{AF87C7D2-3C6F-4669-947D-7990F5116625}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Data.IntegrationTest", "IoT.Data.IntegrationTest\IoT.Data.IntegrationTest.csproj", "{42E50BAE-65FF-4C21-9F75-053E1E848F40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4DB575D7-36D9-425C-BE74-DA8222C9B5B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4DB575D7-36D9-425C-BE74-DA8222C9B5B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4DB575D7-36D9-425C-BE74-DA8222C9B5B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4DB575D7-36D9-425C-BE74-DA8222C9B5B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{759FE3D6-F9A9-4296-A378-432E4F9983C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{759FE3D6-F9A9-4296-A378-432E4F9983C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{759FE3D6-F9A9-4296-A378-432E4F9983C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +52,18 @@ Global
 		{387CD312-A0FD-460E-9823-B71867DE3D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{387CD312-A0FD-460E-9823-B71867DE3D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{387CD312-A0FD-460E-9823-B71867DE3D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48A7DC2F-C072-4354-BD91-7B0065C004AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48A7DC2F-C072-4354-BD91-7B0065C004AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48A7DC2F-C072-4354-BD91-7B0065C004AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48A7DC2F-C072-4354-BD91-7B0065C004AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF87C7D2-3C6F-4669-947D-7990F5116625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF87C7D2-3C6F-4669-947D-7990F5116625}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF87C7D2-3C6F-4669-947D-7990F5116625}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF87C7D2-3C6F-4669-947D-7990F5116625}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42E50BAE-65FF-4C21-9F75-053E1E848F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42E50BAE-65FF-4C21-9F75-053E1E848F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42E50BAE-65FF-4C21-9F75-053E1E848F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42E50BAE-65FF-4C21-9F75-053E1E848F40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +71,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9F7AA030-FF1D-48C4-A2FA-4E466B7769D2} = {C97A1FE9-01A4-495A-9774-4A7C55C56E74}
 		{387CD312-A0FD-460E-9823-B71867DE3D69} = {C97A1FE9-01A4-495A-9774-4A7C55C56E74}
+		{B4D0E570-F142-4F3B-9300-E47A91E5DEF2} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
+		{48A7DC2F-C072-4354-BD91-7B0065C004AE} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
+		{AF87C7D2-3C6F-4669-947D-7990F5116625} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
+		{42E50BAE-65FF-4C21-9F75-053E1E848F40} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB2702DA-091C-4711-B8B4-FB42CD772894}
