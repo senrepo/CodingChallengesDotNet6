@@ -24,7 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise Files", "Exercise 
 		Copeland\Excercise Files\Sentil Elayappan Interview Schedule .pdf = Copeland\Excercise Files\Sentil Elayappan Interview Schedule .pdf
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.Data", "Copeland\Copeland.IoTData\IoT.Data.csproj", "{48A7DC2F-C072-4354-BD91-7B0065C004AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.Data", "Copeland\IoT.Data\IoT.Data.csproj", "{48A7DC2F-C072-4354-BD91-7B0065C004AE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.Data.UnitTest", "Copeland\IoT.Data.UnitTest\IoT.Data.UnitTest.csproj", "{40464234-3D32-4916-96C1-B5101FA861D6}"
 EndProject

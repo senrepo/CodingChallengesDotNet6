@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Copeland.IoTData\IoT.Data.csproj" />
+    <ProjectReference Include="..\IoT.Data\IoT.Data.csproj" />
   </ItemGroup>
 
 </Project>
