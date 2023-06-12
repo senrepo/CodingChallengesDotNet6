@@ -24,11 +24,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Exercise Files", "Exercise 
 		Copeland\Excercise Files\Sentil Elayappan Interview Schedule .pdf = Copeland\Excercise Files\Sentil Elayappan Interview Schedule .pdf
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Data", "Copeland\Copeland.IoTData\IoT.Data.csproj", "{48A7DC2F-C072-4354-BD91-7B0065C004AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.Data", "Copeland\Copeland.IoTData\IoT.Data.csproj", "{48A7DC2F-C072-4354-BD91-7B0065C004AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Data.UnitTest", "IoT.Data.UnitTest\IoT.Data.UnitTest.csproj", "{AF87C7D2-3C6F-4669-947D-7990F5116625}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.Data.UnitTest", "Copeland\IoT.Data.UnitTest\IoT.Data.UnitTest.csproj", "{40464234-3D32-4916-96C1-B5101FA861D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoT.Data.IntegrationTest", "IoT.Data.IntegrationTest\IoT.Data.IntegrationTest.csproj", "{42E50BAE-65FF-4C21-9F75-053E1E848F40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoT.Data.IntegrationTest", "Copeland\IoT.Data.IntegrationTest\IoT.Data.IntegrationTest.csproj", "{A1B179AC-18ED-443F-9140-BA5EAB2B1760}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,14 +56,14 @@ Global
 		{48A7DC2F-C072-4354-BD91-7B0065C004AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48A7DC2F-C072-4354-BD91-7B0065C004AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48A7DC2F-C072-4354-BD91-7B0065C004AE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AF87C7D2-3C6F-4669-947D-7990F5116625}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF87C7D2-3C6F-4669-947D-7990F5116625}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF87C7D2-3C6F-4669-947D-7990F5116625}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF87C7D2-3C6F-4669-947D-7990F5116625}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42E50BAE-65FF-4C21-9F75-053E1E848F40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42E50BAE-65FF-4C21-9F75-053E1E848F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42E50BAE-65FF-4C21-9F75-053E1E848F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42E50BAE-65FF-4C21-9F75-053E1E848F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40464234-3D32-4916-96C1-B5101FA861D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40464234-3D32-4916-96C1-B5101FA861D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40464234-3D32-4916-96C1-B5101FA861D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40464234-3D32-4916-96C1-B5101FA861D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1B179AC-18ED-443F-9140-BA5EAB2B1760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1B179AC-18ED-443F-9140-BA5EAB2B1760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1B179AC-18ED-443F-9140-BA5EAB2B1760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1B179AC-18ED-443F-9140-BA5EAB2B1760}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,8 +73,8 @@ Global
 		{387CD312-A0FD-460E-9823-B71867DE3D69} = {C97A1FE9-01A4-495A-9774-4A7C55C56E74}
 		{B4D0E570-F142-4F3B-9300-E47A91E5DEF2} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
 		{48A7DC2F-C072-4354-BD91-7B0065C004AE} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
-		{AF87C7D2-3C6F-4669-947D-7990F5116625} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
-		{42E50BAE-65FF-4C21-9F75-053E1E848F40} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
+		{40464234-3D32-4916-96C1-B5101FA861D6} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
+		{A1B179AC-18ED-443F-9140-BA5EAB2B1760} = {51016463-117A-40F4-9E11-A2B5ADC7484F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DB2702DA-091C-4711-B8B4-FB42CD772894}

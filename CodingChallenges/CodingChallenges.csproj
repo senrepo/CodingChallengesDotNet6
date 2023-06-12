@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DeviceDataFoo1\**" />
+    <Compile Remove="DeviceDataFoo2\**" />
+    <Compile Remove="DeviceDataRepo\**" />
+    <EmbeddedResource Remove="DeviceDataFoo1\**" />
+    <EmbeddedResource Remove="DeviceDataFoo2\**" />
+    <EmbeddedResource Remove="DeviceDataRepo\**" />
+    <None Remove="DeviceDataFoo1\**" />
+    <None Remove="DeviceDataFoo2\**" />
+    <None Remove="DeviceDataRepo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ECommerce\" />
   </ItemGroup>
 
