@@ -9,7 +9,7 @@ namespace CodingChallengesTest
     public class DeclarationAndInitialization
     {
         [Test]
-        public void String()
+        public void Test_String_Initialization()
         {
             string[] animals = new string[] { "dog", "cat" };
             var birds = new string[] { "parrot", "crow" };
